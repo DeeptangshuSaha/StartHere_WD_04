@@ -47,7 +47,7 @@ const Timer=(a: string | Date) => {
     };
     useEffect(() => {
         clearTimer(getDeadTime());
-    });
+    },[]);
     return timer;
 }
 export default Timer;
