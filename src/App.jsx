@@ -1,9 +1,9 @@
 'use component'
 import './App.css'
-import Timer from "./timer.tsx";
+import Timer from "./timer.jsx";
 
 const App = () => {
-    const [days, Hours, Minutes, Seconds]  = Timer(new Date("2024-09-01T12:00:00+05:30"));
+    const [days, Hours, Minutes, Seconds]  = Timer(new Date('2024-09-01T12:00:00+05:30'));
     return (
         <div style={{ textAlign: "center" }}>
             {Seconds+Minutes+Hours+days > 0 ? (

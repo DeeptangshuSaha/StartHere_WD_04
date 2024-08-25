@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState} from "react";
 
-const Timer=(a: string | Date) => {
+const Timer=(a) => {
     const Ref = useRef(null);
     const [timer, setTimer] = useState([]);
 
@@ -25,18 +25,15 @@ const Timer=(a: string | Date) => {
             getTimeRemaining(e);
         if (total >= 0) {
             setTimer([days, hours, minutes, seconds]);
-        } else {
-            setTimer("Done");
         }
     };
 
     const clearTimer = (e) => {
         setTimer([]);
         if (Ref.current) clearInterval(Ref.current);
-        const id = setInterval(() => {
+        Ref.current = setInterval(() => {
             startTimer(e);
         }, 1000);
-        Ref.current = id;
     };
 
     const getDeadTime = () => {
